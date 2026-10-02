@@ -1,0 +1,23 @@
+{
+  "name": "playwright-e2e-practice-software-testing",
+  "version": "1.0.0",
+  "description": "Projeto de portfólio de QA: plano de teste e automação E2E com **Playwright** para a **Sprint 1** do [Practice Software Testing](https://github.com/testsmith-io/practice-software-testing), seguindo o syllabus **CTFL 4.0 (ISTQB)**.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanaPortezan/playwright-e2e-practice-software-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/luanaPortezan/playwright-e2e-practice-software-testing/issues"
+  },
+  "homepage": "https://github.com/luanaPortezan/playwright-e2e-practice-software-testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4"
+  }
+}
