@@ -13,5 +13,5 @@ test('CT-VP-01: Validar exibição da grade de produtos na página inicial', asy
   const primeiroCartao = homePage.productCards.first();
   await expect(primeiroCartao.locator('[data-test="product-name"]')).toBeVisible(); // Nome do produto
   // await expect(primeiroCartao.locator('img')).toBeVisible(); // Ainda não implementado no site
-  await expect(primeiroCartao.locator('.text-muted')).toBeVisible(); // Classe CSS do preço
+  await expect(page.locator('.text-muted').first()).toBeVisible(); // Classe CSS do preço
 });

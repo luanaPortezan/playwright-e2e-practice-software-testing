@@ -6,14 +6,17 @@ export class HomePage {
 
   constructor(page: Page) {
     this.page = page;
-    
-    // elementos no DOM
-    this.productCards = page.locator('[data-test^="product-"]'); 
+    this.productCards = page.locator('li').filter ({ 
+      has: page.locator('[data-test^="product-"]')
+    });
   }
 
-  // 3. Métodos de ação (o que o usuário pode fazer nesta página)
+  // Métodos de ação (o que o usuário pode fazer nesta página)
   async visitar() {
-    // Como a baseURL no playwright.config.ts, basta passar a barra '/'
-    await this.page.goto('/'); 
+    await this.page.goto('/'); // Como a baseURL no playwright.config.ts, basta passar a barra '/'
+  }
+
+  async clicarPrimeiroProduto() {
+  await this.productCards.first().click();
   }
 }
