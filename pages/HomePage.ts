@@ -16,7 +16,8 @@ export class HomePage {
     await this.page.goto('/'); // Como a baseURL no playwright.config.ts, basta passar a barra '/'
   }
 
+  // Método para clicar no primeiro produto da lista
   async clicarPrimeiroProduto() {
-  await this.productCards.first().click();
-  }
+    await this.productCards.first().locator('[data-test="product-name"]').click();  // Clica no primeiro produto da lista
+  } 
 }
