@@ -20,4 +20,9 @@ export class HomePage {
   async clicarPrimeiroProduto() {
     await this.productCards.first().locator('[data-test="product-name"]').click();  // Clica no primeiro produto da lista
   } 
+
+  async voltarNavegador() { 
+  await this.page.goBack(); // Volta para a página anterior - navegador
+}
+
 }
