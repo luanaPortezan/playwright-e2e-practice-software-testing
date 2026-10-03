@@ -12,16 +12,16 @@ export class HomePage {
   }
 
   // Métodos de ação (o que o usuário pode fazer nesta página)
-  async visitar() {
+  async visit() {
     await this.page.goto('/'); // Como a baseURL no playwright.config.ts, basta passar a barra '/'
   }
 
   // Método para clicar no primeiro produto da lista
-  async clicarPrimeiroProduto() {
+  async clickFirstProduct() {
     await this.productCards.first().locator('[data-test="product-name"]').click();  // Clica no primeiro produto da lista
   } 
 
-  async voltarNavegador() { 
+  async goBack() { 
   await this.page.goBack(); // Volta para a página anterior - navegador
 }
 
