@@ -12,13 +12,13 @@ test.describe('CT-VP-01: Product grid display on the home page', () => {
 
     test('Validate product card shows name', async () => {
       for (const card of await homePage.productCards.all()) {
-        await expect(card.locator('[data-test="product-name"]')).toBeVisible(); // Nome do produto
+        await expect(homePage.productName(card)).toBeVisible(); // Nome do produto
       }
     });
 
     test('Validate product card shows price', async () => {
       for (const card of await homePage.productCards.all()) {
-        await expect(card.locator('[data-test="product-price"]')).toBeVisible(); // Preço do produto
+        await expect(homePage.productPrice(card)).toBeVisible(); // Preço do produto
       }
     });
 
@@ -27,7 +27,7 @@ test.describe('CT-VP-01: Product grid display on the home page', () => {
         true,
         'Known bug: Missing product image - Mapped to Issue #1 - https://github.com/luanaPortezan/playwright-e2e-practice-software-testing/issues/1');
       for (const card of await homePage.productCards.all()) {
-        await expect(card.locator('img')).toBeVisible(); // Imagem do produto - Mapeado na Issue #1
+        await expect(homePage.productImage(card)).toBeVisible(); // Imagem do produto - Mapeado na Issue #1
       } 
     });
 });
