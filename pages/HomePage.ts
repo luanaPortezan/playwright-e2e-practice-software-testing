@@ -1,13 +1,16 @@
 import { Page } from "@playwright/test";
 import { ProductListComponent } from "../components/ProductListComponent";
+import { HeaderComponent } from "../components/HeaderComponent";
 
 export class HomePage {
   readonly page: Page;
   readonly productList: ProductListComponent;
+  readonly header: HeaderComponent;
 
   constructor(page: Page) {
     this.page = page;
     this.productList = new ProductListComponent(page);
+    this.header = new HeaderComponent(page);
   }
 
   // Métodos de ação (o que o usuário pode fazer nesta página)
