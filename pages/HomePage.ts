@@ -1,5 +1,5 @@
-import { Page } from '@playwright/test';
-import { ProductListComponent } from '../components/ProductListComponent';
+import { Page } from "@playwright/test";
+import { ProductListComponent } from "../components/ProductListComponent";
 
 export class HomePage {
   readonly page: Page;
@@ -12,12 +12,11 @@ export class HomePage {
 
   // Métodos de ação (o que o usuário pode fazer nesta página)
   async visit() {
-    await this.page.goto('/'); // Como a baseURL no playwright.config.ts, basta passar a barra '/'
+    await this.page.goto("/"); // Como a baseURL no playwright.config.ts, basta passar a barra '/'
   }
 
   // Método para voltar à página anterior
-  async goBack() { 
-  await this.page.goBack();
-} 
-
+  async goBack() {
+    await this.page.goBack();
+  }
 }
