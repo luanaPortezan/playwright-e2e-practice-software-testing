@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator } from "@playwright/test";
 
 export class ProductListComponent {
   readonly page: Page;
@@ -6,8 +6,8 @@ export class ProductListComponent {
 
   constructor(page: Page) {
     this.page = page;
-    this.productCards = page.locator('li').filter ({ 
-      has: page.locator('[data-test^="product-"]')
+    this.productCards = page.locator("li").filter({
+      has: page.locator('[data-test^="product-"]'),
     });
   }
 
@@ -16,12 +16,12 @@ export class ProductListComponent {
     return card.locator('[data-test="product-name"]'); // Nome do produto
   }
 
-  productPrice(card: Locator): Locator { 
+  productPrice(card: Locator): Locator {
     return card.locator('[data-test="product-price"]'); // Preço do produto
   }
 
-  productImage(card: Locator): Locator { 
-    return card.locator('img');  // Imagem do produto
+  productImage(card: Locator): Locator {
+    return card.locator("img"); // Imagem do produto
   }
 
   // Métodos de interação (ações que podemos realizar nesta página)
@@ -31,11 +31,11 @@ export class ProductListComponent {
 
   // Método para clicar no primeiro produto da lista
   async clickFirstProduct() {
-    await this.productName(this.productCards.first()).click();  } 
+    await this.productName(this.productCards.first()).click();
+  }
 
   // Método para obter todos os produtos da lista
   async getAllProducts() {
-      return await this.productCards.all();
+    return await this.productCards.all();
   }
-
 }
