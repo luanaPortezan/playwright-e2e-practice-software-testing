@@ -7,18 +7,18 @@ test.describe('CT-VP-01: Product grid display on the home page', () => {
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     await homePage.visit();
-    await expect(homePage.productCards.first()).toBeVisible();
+    await expect(homePage.productList.productCards.first()).toBeVisible();
   });
 
     test('Validate product card shows name', async () => {
-      for (const card of await homePage.productCards.all()) {
-        await expect(homePage.productName(card)).toBeVisible(); // Nome do produto
+      for (const card of await homePage.productList.getAllProducts()) {
+        await expect(homePage.productList.productName(card)).toBeVisible(); // Nome do produto
       }
     });
 
     test('Validate product card shows price', async () => {
-      for (const card of await homePage.productCards.all()) {
-        await expect(homePage.productPrice(card)).toBeVisible(); // Preço do produto
+      for (const card of await homePage.productList.getAllProducts()) {
+        await expect(homePage.productList.productPrice(card)).toBeVisible(); // Preço do produto
       }
     });
 
@@ -26,8 +26,8 @@ test.describe('CT-VP-01: Product grid display on the home page', () => {
       test.fail(
         true,
         'Known bug: Missing product image - Mapped to Issue #1 - https://github.com/luanaPortezan/playwright-e2e-practice-software-testing/issues/1');
-      for (const card of await homePage.productCards.all()) {
-        await expect(homePage.productImage(card)).toBeVisible(); // Imagem do produto - Mapeado na Issue #1
+      for (const card of await homePage.productList.getAllProducts()) {
+        await expect(homePage.productList.productImage(card)).toBeVisible(); // Imagem do produto - Mapeado na Issue #1
       } 
     });
 });
