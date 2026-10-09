@@ -1,15 +1,12 @@
 import { Page } from "@playwright/test";
-import { HeaderComponent } from "../components/HeaderComponent";
 import { ProductListComponent } from "../components/ProductListComponent";
+import { BasePage } from "./BasePage";
 
-export class CategoryPage {
-  readonly page: Page;
-  readonly header: HeaderComponent;
+export class CategoryPage extends BasePage {
   readonly productList: ProductListComponent;
 
   constructor(page: Page) {
-    this.page = page;
-    this.header = new HeaderComponent(page);
+    super(page);
     this.productList = new ProductListComponent(page);
   }
 

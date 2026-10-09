@@ -1,15 +1,10 @@
 import { Page, Locator } from "@playwright/test";
-import { HeaderComponent } from "../components/HeaderComponent";
-
-export class ProductDetailPage {
-  readonly page: Page;
-  readonly header: HeaderComponent;
+import { BasePage } from "./BasePage";
+export class ProductDetailPage extends BasePage {
   readonly productNameTitle: Locator;
 
   constructor(page: Page) {
-    this.page = page;
-    this.header = new HeaderComponent(page);
-
+    super(page);
     this.productNameTitle = page.locator('h1[data-test="product-name"]');
   }
 
